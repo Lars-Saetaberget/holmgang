@@ -1,0 +1,4 @@
+.idea/
+code/Holmgangrevpoc/app/debug/
+code/Holmgangrevpoc/app/release/
+aws/lambda/smileyDayGetEncryptedPasswords/lambda.json

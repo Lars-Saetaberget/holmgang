@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nothing_to_see_here"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF30E"
+    app:layoutDescription="@xml/activity_nothing_to_see_here_scene"
+    tools:context=".NothingToSeeHereActivity">
+
+
+    <Button
+        android:id="@+id/left_eye"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="70dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="-80dp"
+        android:backgroundTint="#000000"
+        app:layout_constraintStart_toStartOf="@id/mouth"
+        app:layout_constraintTop_toTopOf="@id/mouth" />
+
+
+    <Button
+        android:id="@+id/right_eye"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="70dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="-80dp"
+        android:backgroundTint="#000000"
+        app:layout_constraintEnd_toEndOf="@id/mouth"
+        app:layout_constraintTop_toTopOf="@id/mouth" />
+
+    <com.marcinmoskala.arcseekbar.ArcSeekBar
+        android:id="@+id/mouth"
+        android:layout_width="227dp"
+        android:layout_height="113dp"
+        android:rotation="180"
+        android:rotationY="-180"
+        android:thumbTint="#000000"
+        android:visibility="visible"
+        app:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:progress="0"
+        app:progressBackgroundColor="#000000"
+        app:progressBackgroundWidth="20dp"
+        app:progressColor="#028A0F"
+        app:progressWidth="20dp"
+        app:roundEdges="true" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

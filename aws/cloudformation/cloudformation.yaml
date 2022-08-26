@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Metadata:
+    Generator: "former2"
+Description: ""
+Resources:
+    IAMRole:
+        Type: "AWS::IAM::Role"
+        Properties:
+            Path: "/"
+            RoleName: "smileyDayLambdaRole"
+            AssumeRolePolicyDocument: "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"lambda.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}"
+            MaxSessionDuration: 3600
+            ManagedPolicyArns: 
+              - "arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess"
+              - "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+            Description: "Allows Lambda functions to call AWS services on your behalf."
+
+    SSMParameter:
+        Type: "AWS::SSM::Parameter"
+        Properties:
+            Name: "smileyDay-key"
+            Type: "String"
+            Value: "[left, left, left, left, left, right, right, right, left, left, left, left, right]"
+            DataType: "text"
+            Tier: "Standard"
+
+    SSMParameter2:
+        Type: "AWS::SSM::Parameter"
+        Properties:
+            Name: "smileyDay-password"
+            Type: "String"
+            Value: "maybe_we_should_have_just_used_a_hash_instead"
+            DataType: "text"
+            Tier: "Standard"
+
+    SSMParameter3:
+        Type: "AWS::SSM::Parameter"
+        Properties:
+            Name: "smileyDay-steps"
+            Type: "String"
+            Value: "[{\"title\":\"Meeting with Sergei\",\"description\":\"Sergei wanted to discuss a new construction project in Sørenga.\\n\\nNeed to call him to set up a meeting.\"},{\"title\":\"\\\"Quality assurance\\\" of budget\",\"description\":\"I need to take a look at some paperwork for the coming fiscal year.\\n\\nSure hope I don't misplace any funds ;) We have that huge Fornebu project coming up, so our paperwork needs to be in order!\\n\\nMight be a highly profitable venture if we play our cards right.\"},{\"title\":\"Get new paint for boat\",\"description\":\"I heard you can get your boat painted gold. \\nHmmm...\"},{\"title\":\"Investigate relevant sandstone properties for use in concrete\",\"description\":\"Some newly hired engineer apparently took some samples of the concrete provided by Sergei and is \\\"worried\\\". Too fine or too coarse or something apparently...\\n\\nBetter get Ole to take a look so we can bury this thing.\\n\\nShould probably contact Sergei so he can arrange some paperwork as well, just in case.\",\"\":\"\"},{\"title\":\"New TODO app?\",\"description\":\"This app is so annoying to use. \\n\\nSometimes it won't even let me update OR add new notes, like it's just a bunch of static text or something.\\n\\nMaybe Sergei has something else I can use.\"}]"            
+            DataType: "text"
+            Tier: "Standard"
+
