@@ -12,6 +12,8 @@ Reverse engineer the app ``smiley_day.apk`` to see if any hidden functionality m
 
 Flag format: lowercase_letters_seperated_by_underscores
 
+Note: If you encounter the following error: "Unable to determine ClassLinker field offsets". Please try running the app in an emulator with an older API version, such as API 30. You may also try to create an emulator that does not have Google Play if you still have issues.
+
 ## Part 2
 
 Keep digging through the Smiley Day app and crack the password to unlock the secret data.
